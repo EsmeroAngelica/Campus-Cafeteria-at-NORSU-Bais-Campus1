@@ -41,9 +41,11 @@ class Client extends Dbh
         return 2; 
     }
 
-    $_SESSION['user_id'] = $user['id'];
+$_SESSION['user_id'] = $user['id'];
+$_SESSION['role'] = $user['role'];
+$_SESSION['user_name'] = $user['name'];
 
-    return "menu.php";  
+return "/system_analysis/public/client/home.php"; 
 }
 }
 ?>

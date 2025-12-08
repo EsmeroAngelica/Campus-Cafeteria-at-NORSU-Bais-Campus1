@@ -40,7 +40,7 @@
   
   .role-btn-streamlined {  
     background-color: #e09731ff;
-    color: #000000ff;   
+    color: #ffffffff;   
     font-weight: 800;  
     padding: 20px 30px;  
     border-radius: 12px;  
@@ -113,7 +113,7 @@
     <div class="flex flex-col sm:flex-row justify-center items-center gap-6">  
 
         <a href="../pages/customer.php" class="role-btn-streamlined">  
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#000000ff" stroke-width="2">  
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ffffffff" stroke-width="2">  
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/>  
                 <path d="M4 20c0-3.3 2.7-6 6-6h4c3.3 0 6 2.7 6 6"/>  
             </svg>  
