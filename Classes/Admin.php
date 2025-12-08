@@ -7,7 +7,6 @@ class Admin extends Dbh
 {
     $conn = $this->connect();
 
-    // check if email exists
     $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -17,7 +16,6 @@ class Admin extends Dbh
         return "email_exists";
     }
 
-    // insert admin
     $hashed = password_hash($password, PASSWORD_DEFAULT);
 
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, 'admin')");
@@ -55,7 +53,6 @@ class Admin extends Dbh
             return "wrong_password";
         }
 
-        // login success
         $_SESSION['admin_id'] = $row['id'];
         $_SESSION['admin_name'] = $row['name'];
 

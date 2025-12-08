@@ -6,11 +6,9 @@ require_once "../../Classes/Connection.php";
 $db = new Dbh();
 $conn = $db->connect();
 
-// Fetch all menu items
 $query = "SELECT * FROM menu_items ORDER BY id ASC";
 $result = $conn->query($query);
 
-// Categorize
 $meals = [];
 $snacks = [];
 $drinks = [];
@@ -33,13 +31,11 @@ while ($row = $result->fetch_assoc()) {
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
- /* Background Image */
 body {
     background: url("../images/back1.jpg") center/cover no-repeat fixed;
     backdrop-filter: brightness(0.8);
 }
 
-/* A soft overlay so the text becomes readable */
 body::before {
     content: "";
     position: fixed;
@@ -51,16 +47,14 @@ body::before {
     z-index: -1;
 }
 
-/* CATEGORY BUTTONS */
 .tab-active {
     background: #3671f0ff;
     color: white !important;
     font-weight: bold;
 }
 
-/* MENU CARD (bigger & lighter) */
 .menu-card {
-    background: rgba(255, 255, 255, 0.8);   /* light glass effect */
+    background: rgba(255, 255, 255, 0.8);  
     border: 2px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(8px);
     border-radius: 20px;
@@ -68,14 +62,12 @@ body::before {
     transition: 0.1s ease;
 }
 
-/* Make images bigger and nicer */
 .menu-img {
     height: 300px !important;
     object-fit: cover;
     border-radius: 10px;
 }
 
-/* Better text colors */
 h2 {
     color: #000000ff !important;
 }
@@ -85,14 +77,12 @@ p {
     font-size: 0.95rem;
 }
 
-/* Price color */
 .price-tag {
     color: #2563eb;
     font-weight: bold;
     font-size: 1.2rem;
 }
 
-/* Fade animation */
 .fade {
     animation: fadeIn 0.4s ease;
 }
@@ -102,7 +92,7 @@ p {
 }
 
 .back-btn {
-    margin-top: 80px;  /* adjust higher (negative value = goes up) */
+    margin-top: 80px; 
     margin-bottom: 30px;
 }
 
@@ -114,31 +104,25 @@ p {
 
 <script>
 function showCategory(cat) {
-    // hide all
     document.getElementById("Meals").style.display = "none";
     document.getElementById("Snacks").style.display = "none";
     document.getElementById("Drinks").style.display = "none";
 
-    // show selected
     document.getElementById(cat).style.display = "grid";
 
-    // tab active state
     document.getElementById("btnMeals").classList.remove("tab-active");
     document.getElementById("btnSnacks").classList.remove("tab-active");
     document.getElementById("btnDrinks").classList.remove("tab-active");
 
     document.getElementById("btn" + cat).classList.add("tab-active");
 
-    // update dynamic button
     updateButton(cat);
 }
 
-/* Smooth scroll top */
 function scrollTopSmooth() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-/* Change button label depending on active category */
 function updateButton(cat) {
     let btn = document.getElementById("dynamicBtn");
 
@@ -149,7 +133,6 @@ function updateButton(cat) {
     }
 }
 
-/* Handle button click: scroll OR switch tab */
 function handleButton() {
     let btnText = document.getElementById("dynamicBtn").textContent;
 
@@ -181,7 +164,6 @@ function pickQty(qty) {
 
     <h1 class="text-6xl font-bold mb-10 text-white">Our Menu</h1>
 
-    <!-- Category Tabs -->
     <div class="flex gap-3 mb-6 text-white">
         <button id="btnMeals" class="px-5 py-2 rounded-full border tab-active"
                 onclick="showCategory('Meals')">Meals</button>
@@ -194,7 +176,6 @@ function pickQty(qty) {
     </div>
 
 
-    <!-- Meals Section -->
     <div id="Meals" class="grid grid-cols-1 md:grid-cols-3 gap-6 fade">
         <?php foreach ($meals as $row): ?>
         <div class="menu-card p-5 rounded-xl shadow fade">
@@ -215,7 +196,6 @@ function pickQty(qty) {
     </div>
 
 
-    <!-- Snacks Section -->
     <div id="Snacks" class="hidden grid-cols-1 md:grid-cols-3 gap-6 fade">
         <?php foreach ($snacks as $row): ?>
         <div class="menu-card p-5 rounded-xl shadow fade">
@@ -236,7 +216,6 @@ function pickQty(qty) {
     </div>
 
 
-    <!-- Drinks Section -->
     <div id="Drinks" class="hidden grid-cols-1 md:grid-cols-3 gap-6 fade">
         <?php foreach ($drinks as $row): ?>
         <div class="menu-card p-5 rounded-xl shadow fade">
@@ -287,7 +266,7 @@ function pickQty(qty) {
 </dialog>
 
 <script>
-showCategory('Meals'); // default open
+showCategory('Meals'); 
 </script>
 
 </body>

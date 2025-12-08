@@ -21,7 +21,6 @@ $name = $_SESSION['user_name'];
 
 <style>
 
-    /* Dark overlay */
     .overlay-bg {
         position: fixed;
         top: 0;
@@ -32,7 +31,6 @@ $name = $_SESSION['user_name'];
         z-index: -1;
     }
 
-    /* Welcome card */
     .welcome-card {
         background: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(20px);
@@ -71,13 +69,11 @@ $name = $_SESSION['user_name'];
 
 <div class="min-h-screen flex flex-col items-center pt-16 px-4">
 
-    <!-- WELCOME CARD -->
     <div class="welcome-card">
         <h1 class="welcome-title">Welcome, <?= htmlspecialchars($name); ?>!</h1>
         <p class="welcome-sub">Ready to order? Explore our delicious menu below.</p>
     </div>
 
-    <!-- MENU (keeps your card design, nothing touched inside menu.php) -->
     <div class="w-full max-w-7xl">
         <?php include "menu.php"; ?>
     </div>

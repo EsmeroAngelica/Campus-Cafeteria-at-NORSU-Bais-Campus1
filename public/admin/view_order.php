@@ -16,7 +16,6 @@ $order_id = $_GET['id'];
 $db = new Dbh();
 $conn = $db->connect();
 
-// Fetch main order info
 $order_stmt = $conn->prepare("
     SELECT orders.*, users.name AS customer_name 
     FROM orders 
@@ -27,7 +26,6 @@ $order_stmt->bind_param("i", $order_id);
 $order_stmt->execute();
 $order = $order_stmt->get_result()->fetch_assoc();
 
-// Fetch items for this order
 $items_stmt = $conn->prepare("
     SELECT order_items.*, menu_items.name, menu_items.price 
     FROM order_items
@@ -59,7 +57,6 @@ $items = $items_stmt->get_result();
 <p class="text-lg mb-4">
     <strong>Customer:</strong> <?= $order['customer_name']; ?><br>
 
-    <!-- Status badge -->
     <strong>Status:</strong>
     <?php if ($order['status'] == "Pending"): ?>
         <span class="px-3 py-1 bg-yellow-400 text-black rounded-full">Pending</span>
@@ -96,7 +93,6 @@ $items = $items_stmt->get_result();
     </tbody>
 </table>
 
-<!-- Payment Button -->
 <?php if ($order['status'] == 'Pending'): ?>
     <form action="pay_order.php" method="POST" class="inline-block mt-4">
         <input type="hidden" name="order_id" value="<?= $order_id; ?>">

@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $passcode = $_POST['passcode'];
     $password = $_POST['password'];
 
-    // Only admins who know this passcode can register
     if ($passcode !== "cafeteria2025") {
         $message = "❌ Invalid Admin Passcode!";
     } else {
@@ -23,10 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
        } else if ($result === "success") {
     $message = "✅ Admin Account Created Successfully! Redirecting to login...";
 
-    // Show success message instantly
     echo "<div class='alert alert-success' style='margin: 20px; font-size: 18px;'>{$message}</div>";
 
-    // Redirect after 3 seconds
     echo "<script>
             setTimeout(function() {
                 window.location.href = '../public/admin/login.php?success=registered';
@@ -65,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <div class="hero-bg w-full h-screen">
     <div class="overlay w-full h-full flex items-center justify-center px-4">
 
-        <!-- BLURRED BOX -->
         <div class="bg-white/90 backdrop-blur-lg p-8 rounded-2xl shadow-2xl max-w-md w-full">
 
             <h2 class="text-3xl font-extrabold text-gray-800 mb-3 text-center">

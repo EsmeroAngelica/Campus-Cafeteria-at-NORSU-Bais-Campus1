@@ -8,7 +8,6 @@
             let email = $('#email').val();
             let password = $('#password').val();
 
-            // alert("Your email is :" + email + " and your password is " + password)
 
             $.ajax({
                 url: '../handlers/signup.php',

@@ -16,16 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $price = $_POST['price'];
     $description = $_POST['description'];
 
-    // IMAGE UPLOAD
     $image = $_FILES['image']['name'];
     $tmp_name = $_FILES['image']['tmp_name'];
 
     $upload_path = "../public/images/" . $image;
 
-    // move image
     move_uploaded_file($tmp_name, $upload_path);
 
-    // Insert into DB
     $db = new Dbh();
     $conn = $db->connect();
 

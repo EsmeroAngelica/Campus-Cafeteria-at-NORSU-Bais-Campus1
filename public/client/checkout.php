@@ -12,7 +12,6 @@ $conn = $db->connect();
 
 $user_id = $_SESSION['user_id'];
 
-// get cart items
 $query = "
     SELECT cart.quantity, menu_items.*
     FROM cart 

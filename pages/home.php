@@ -1,14 +1,12 @@
 <?php  
-// Campus Cafeteria System - Final Unified Kiosk Theme (Navy & Bronze)  
 ?>  <!DOCTYPE html>  <html lang="en" data-theme="dark">  
 <head>  
 <meta charset="utf-8"/>  
 <meta name="viewport" content="width=device-width,initial-scale=1"/>  
 <title>Campus Cafeteria — Welcome</title>  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.css" rel="stylesheet" />  
 <script src="https://cdn.tailwindcss.com"></script>  <style>  
-  /* Define NEW Unified Color Palette */  
-  .color-accent { color: #000000ff; } /* Warm Bronze/Gold */  
-  .color-dark-blue { background-color: #4d4e50ff; } /* Navy/Dark Blue Shade */  
+  .color-accent { color: #000000ff; }
+  .color-dark-blue { background-color: #4d4e50ff; } 
     
   .unified-bg {  
     background:  url('../public/images/cafe3.jpg') center/cover no-repeat fixed;  
@@ -30,7 +28,6 @@
     margin: auto;  
   }  
   
-  /* === Welcome Text Styling === */  
   .welcome-text-area {  
     text-shadow: 0 4px 15px rgba(255, 255, 255, 0.37);  
     animation: fadeInScale 1.2s ease-out;  
@@ -41,9 +38,8 @@
     to { opacity: 1; transform: scale(1); }  
   }  
   
-  /* === Streamlined Role Button Style - Large and Touch-Friendly === */  
   .role-btn-streamlined {  
-    background-color: #e09731ff; /* Bronze Accent */  
+    background-color: #e09731ff;
     color: #000000ff;   
     font-weight: 800;  
     padding: 20px 30px;  
@@ -65,7 +61,6 @@
     box-shadow: 0 8px 25px rgba(204,141,51,0.6);  
   }  
   
-  /* Admin Button Specifics */  
   .admin-btn {  
     background-color: transparent;  
     border: 3px solid rgba(255,255,255,0.4);  
@@ -77,15 +72,14 @@
     border-color: #fff;  
   }  
     
-  /* === 2. WHY USE OUR SYSTEM? STYLES - Unified Look === */  
   .section-padding {  
     padding: 20 1.5rem;  
   }  
   
   .feature-card {  
-    background-color: #1f2937; /* Lighter dark blue for cards */  
+    background-color: #1f2937;  
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);  
-    border-top: 4px solid #cc8d33; /* Matching accent border */  
+    border-top: 4px solid #cc8d33; 
     transition: background-color 0.3s ease;  
   }  
   .feature-card:hover {  
@@ -97,7 +91,7 @@
     transition: color 0.3s ease;  
   }  
   .feature-card:hover .feature-icon {  
-    color: #cc8d33; /* Highlight icon with Bronze */  
+    color: #cc8d33;  
   }  
   
 </style>  </head>  <body class="bg-black-900 text-white">  <section class="unified-bg hero-section">  

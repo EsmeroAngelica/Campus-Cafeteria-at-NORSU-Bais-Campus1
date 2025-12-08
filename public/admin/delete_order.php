@@ -16,10 +16,8 @@ $order_id = $_GET['id'];
 $db = new Dbh();
 $conn = $db->connect();
 
-// Delete its items first
 $conn->query("DELETE FROM order_items WHERE order_id = $order_id");
 
-// Delete the order
 if ($conn->query("DELETE FROM orders WHERE id = $order_id")) {
     header("Location: orders.php?deleted=1");
 } else {

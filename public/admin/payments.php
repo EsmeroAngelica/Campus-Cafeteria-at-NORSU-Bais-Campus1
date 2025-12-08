@@ -10,7 +10,6 @@ if (!isset($_SESSION['admin_id'])) {
 $db = new Dbh();
 $conn = $db->connect();
 
-// Fetch all payments with order + user info
 $query = "
     SELECT 
         payments.id AS payment_id,

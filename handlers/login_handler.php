@@ -31,7 +31,6 @@ try {
         $responseData['error'] = "Incorrect password.";
     } 
     else {
-        // SUCCESS — return redirect link
         $responseData['redirect'] = $loginResult;
     }
 

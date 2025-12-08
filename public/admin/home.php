@@ -17,13 +17,11 @@ if (!isset($_SESSION['admin_id'])) {
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-    /* Background image */
     body {
         background: url('../images/cafeteria.jpeg') center/cover no-repeat fixed;
     }
 
 
-    /* Glass effect container */
     .glass-box {
         background: rgba(0, 0, 0, 0.64);
         backdrop-filter: blur(6px);
@@ -54,28 +52,23 @@ if (!isset($_SESSION['admin_id'])) {
         <h1 class="text-6xl font-bold mb-3">Welcome, Admin!</h1>
         <p class="text-white-100 text-lg mb-8">Manage the cafeteria system efficiently.</p>
 
-        <!-- DASHBOARD BUTTONS -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            <!-- Manage Menu -->
             <a href="manage_menu.php" class="menu-btn p-6 rounded-2xl shadow-xl">
                 <h2 class="text-2xl font-bold">🍽 Manage Menu</h2>
                 <p>View, edit, delete & add menu items</p>
             </a>
 
-            <!-- Orders -->
             <a href="orders.php" class="menu-btn p-6 rounded-2xl shadow-xl">
                 <h2 class="text-2xl font-bold">📦 Orders</h2>
                 <p>View customer orders</p>
             </a>
 
-            <!-- Inventory -->
             <a href="inventory_logs.php" class="menu-btn p-6 rounded-2xl shadow-xl">
                 <h2 class="text-2xl font-bold">📊 Inventory Logs</h2>
                 <p>Track stock usage</p>
             </a>
 
-            <!-- Payments -->
             <a href="payments.php" class="menu-btn p-6 rounded-2xl shadow-xl">
                 <h2 class="text-2xl font-bold">💳 Payments</h2>
                 <p>View completed transactions</p>
@@ -83,7 +76,6 @@ if (!isset($_SESSION['admin_id'])) {
 
         </div>
 
-        <!-- LOGOUT -->
         <div class="mt-10 text-center">
            
         <a href="../../pages/home.php" 

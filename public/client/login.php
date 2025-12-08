@@ -43,7 +43,6 @@
 
 <script src="../../assets/js/jquery.js"></script>
 
-<!-- LOGIN AJAX -->
 <script>
 $(".btn-login").on("click", function (e) {
     e.preventDefault();

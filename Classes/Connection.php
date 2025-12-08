@@ -5,7 +5,7 @@ class Dbh
     private $host = "localhost";
     private $user = "root";
     private $pwd = "";
-    private $dbName = "cafeteria_system2";   // <-- Your database name
+    private $dbName = "cafeteria_system2"; 
 
     protected $conn;
 

@@ -10,7 +10,6 @@ if (!isset($_SESSION['admin_id'])) {
 $db = new Dbh();
 $conn = $db->connect();
 
-// FILTER SYSTEM
 $status_filter = "";
 
 if (isset($_GET['status'])) {
@@ -41,7 +40,6 @@ $result = $conn->query($query);
 
 <h1 class="text-5xl font-bold mb-10">📦 Customer Orders</h1>
 
-<!-- FILTER BUTTONS -->
 <div class="mb-4 space-x-2">
     <a href="orders.php" class="px-4 py-2 bg-gray-600 text-white rounded">All</a>
     <a href="orders.php?status=Pending" class="px-4 py-2 bg-yellow-500 text-white rounded">Pending</a>
@@ -67,7 +65,6 @@ $result = $conn->query($query);
             <td class="p-3"><?= $row['customer'] ?></td>
             <td class="p-3">₱<?= number_format($row['total'], 2) ?></td>
 
-            <!-- STATUS BADGE FIXED -->
             <td class="p-3">
                 <?php if ($row['status'] == "Pending"): ?>
                     <span class="px-3 py-1 bg-yellow-400 text-black rounded-full">Pending</span>

@@ -16,13 +16,11 @@ if (!isset($_GET['id'])) {
 
 $item_id = $_GET['id'];
 
-// Fetch original data
 $stmt = $conn->prepare("SELECT * FROM menu_items WHERE id = ?");
 $stmt->bind_param("i", $item_id);
 $stmt->execute();
 $item = $stmt->get_result()->fetch_assoc();
 
-// Update item
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $name = $_POST['name'];
