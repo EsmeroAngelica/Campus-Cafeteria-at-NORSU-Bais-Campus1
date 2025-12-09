@@ -81,8 +81,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <button class="btn btn-primary w-full">Add Item</button>
 </form>
-
-<a href="manage_menu.php" class="mt-4 inline-block text-blue-600 underline">
+<br>
+<a href="manage_menu.php"
+   class="inline-block mb-6 px-6 py-3 rounded-full 
+          bg-blue-600 hover:bg-blue-700 
+          text-white font-semibold shadow-lg 
+          hover:shadow-blue-500/50 transition duration-300">
     ← Back to Menu Management
 </a>
 

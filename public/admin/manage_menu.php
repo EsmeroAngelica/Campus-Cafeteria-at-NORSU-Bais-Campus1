@@ -27,7 +27,7 @@ $result = $conn->query($query);
 
 <h1 class="text-6xl font-bold mb-6">🍽 Manage Menu</h1>
 <br></br>
-<a href="add_menu_item.php"
+<a href="add_item.php"
    class="px-5 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
    + Add New Menu Item
 </a>
