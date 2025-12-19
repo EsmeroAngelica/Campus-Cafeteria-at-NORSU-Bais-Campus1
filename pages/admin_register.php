@@ -80,13 +80,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <form method="POST" class="space-y-4">
 
-                <input type="text" name="name" placeholder="Full Name"
+                <input type="text" name="name" placeholder="Nickname"
                        class="input input-bordered w-full" required>
 
                 <input type="email" name="email" placeholder="Email"
                        class="input input-bordered w-full" required>
 
-                <input type="text" name="passcode" placeholder="Admin Passcode"
+                <input type="text" name="passcode" placeholder="Passcode"
                        class="input input-bordered w-full" required>
 
                 <input type="password" name="password" placeholder="Password"

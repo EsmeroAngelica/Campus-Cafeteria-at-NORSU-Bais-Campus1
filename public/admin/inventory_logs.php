@@ -27,6 +27,14 @@ $result = $conn->query("
 <body class="p-10 bg-gray-100">
 
 <h1 class="text-5xl font-bold mb-5">📊 Inventory Logs</h1>
+<br>
+<a href="home.php"
+   class="inline-block mb-6 px-6 py-3 rounded-full 
+          bg-blue-600 hover:bg-blue-700 
+          text-white font-semibold shadow-lg 
+          hover:shadow-blue-500/50 transition duration-300">
+    ← Back to Admin Home
+</a>
 
 <table class="table w-full bg-white shadow-lg">
     <thead class="bg-gray-800 text-white">
@@ -50,14 +58,6 @@ $result = $conn->query("
         <?php } ?>
     </tbody>
 </table>
-<br>
-<a href="home.php"
-   class="inline-block mb-6 px-6 py-3 rounded-full 
-          bg-blue-600 hover:bg-blue-700 
-          text-white font-semibold shadow-lg 
-          hover:shadow-blue-500/50 transition duration-300">
-    ← Back to Admin Home
-</a>
 
 </body>
 </html>

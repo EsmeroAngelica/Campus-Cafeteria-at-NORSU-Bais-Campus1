@@ -5,6 +5,8 @@ if (!isset($_SESSION['admin_id'])) {
     header("Location: login.php");
     exit();
 }
+
+$adminName = $_SESSION['admin_name'] ??'Admin';
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +51,7 @@ if (!isset($_SESSION['admin_id'])) {
 
     <div class="glass-box p-10 rounded-3xl shadow-2xl max-w-3xl w-full text-white relative z-10">
 
-        <h1 class="text-6xl font-bold mb-3">Welcome, Admin!</h1>
+        <h1 class="text-6xl font-bold mb-3">Welcome, <?= htmlspecialchars($adminName); ?>!</h1>
         <p class="text-white-100 text-lg mb-8">Manage the cafeteria system efficiently.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

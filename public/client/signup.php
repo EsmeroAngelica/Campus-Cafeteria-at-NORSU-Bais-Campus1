@@ -18,7 +18,7 @@
 
         <h2 class="text-2xl font-bold text-center mb-4">Create Account</h2>
 
-        <input type="text" id="signup_name" placeholder="Full Name"
+        <input type="text" id="signup_name" placeholder="Nickname"
                class="input input-bordered w-full mb-3">
 
         <input type="email" id="signup_email" placeholder="Email"

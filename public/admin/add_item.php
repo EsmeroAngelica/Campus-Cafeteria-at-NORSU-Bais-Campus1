@@ -15,22 +15,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $category = $_POST['category'];
     $price = $_POST['price'];
     $description = $_POST['description'];
+    $stock = $_POST['stock'];
 
     $image = $_FILES['image']['name'];
     $tmp_name = $_FILES['image']['tmp_name'];
 
-    $upload_path = "../public/images/" . $image;
-
+    $upload_path = "../images/" . $image;
     move_uploaded_file($tmp_name, $upload_path);
 
     $db = new Dbh();
     $conn = $db->connect();
 
     $stmt = $conn->prepare("
-        INSERT INTO menu_items (name, category, price, description, image)
-        VALUES (?, ?, ?, ?, ?)
+        INSERT INTO menu_items (name, category, price, description, image, stock)
+        VALUES (?, ?, ?, ?, ?, ?)
     ");
-    $stmt->bind_param("ssdss", $name, $category, $price, $description, $image);
+
+    $stmt->bind_param(
+        "ssdssi",
+        $name,
+        $category,
+        $price,
+        $description,
+        $image,
+        $stock
+    );
 
     if ($stmt->execute()) {
         header("Location: manage_menu.php?added=success");
@@ -65,14 +74,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            class="input input-bordered w-full" required>
 
     <select name="category" class="select select-bordered w-full" required>
-        <option disabled selected>Select Category</option>
-        <option>Meals</option>
-        <option>Snacks</option>
-        <option>Drinks</option>
-    </select>
+    <option value="" disabled selected>Select Category</option>
+    <option value="Meals">Meals</option>
+    <option value="Snacks">Snacks</option>
+    <option value="Drinks">Drinks</option>
+</select>
 
     <input type="number" step="0.01" name="price" placeholder="Price"
            class="input input-bordered w-full" required>
+
+<input type="number" name="stock" placeholder="Stock Quantity"
+       class="input input-bordered w-full" required>
 
     <textarea name="description" placeholder="Description"
               class="textarea textarea-bordered w-full"></textarea>
